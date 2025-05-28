@@ -22,10 +22,11 @@ public class Day2 {
          */
         int number = 53;
         // reverse(number);
-        System.out.println(isPrime(number));
-        System.out.println(sumofDigits(number));
-        pattern1(4);
-        pattern2(4);
+        // System.out.println(isPrime(number));
+        // System.out.println(sumofDigits(number));
+        pattern4(4);
+        pattern33(4);
+        // pattern2(4);
         // isPrime(number);
 
         // int sum=0;
@@ -90,13 +91,13 @@ public class Day2 {
     }
     //pattern 2
     public static void pattern2(int n){
-        for(int i=1;i<=4;i++){
-            for(int j=1;j<i;j++){
-                if(i==3 && j==2 ){
-                    System.out.print("");
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                if(i==n || j==2 || i==j ){
+                    System.out.print("* ");
+                }else{
+                System.out.print(" ");
                 }
-                System.out.print(" * ");
-
                 
             }
             System.out.println();
@@ -105,10 +106,43 @@ public class Day2 {
     /*pattern 3
     *
     *  *
-    *    *
-    * * * *
+    *  *
+    * *
     
     */
-
+public static void pattern3(int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i;j++){
+            if(i==0 || j==0 || i==(4-j-1) || j==(4-i-1)){
+            System.out.print("* ");
+            }else{
+                System.out.print("  ");
+            }
+        }
+        System.out.println();
+        //i+j==4
+    }
+}
+public static void pattern4(int n){
+    for(int i=0;i<=n;i++){
+        for(int j=n;j>i;j--){
+            System.out.print(" * ");
+        }
+        System.out.println();
+    }
+}
+public static void pattern33(int n){
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4-i;j++){
+            if(i+j==4){
+                System.out.print("* ");
+            }
+            else{
+                System.out.println("  ");
+            }
+        }
+        System.out.println();
+    }
+}
 
 }
